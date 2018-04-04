@@ -52,7 +52,7 @@ namespace AbpPro.Web
                        "ProductsList",
                        L("ProductsList"),
                        url: "Products",
-                       icon: "fa fa-users",
+                       icon: "fa-users",
                        requiredPermissionName: PermissionNames.Pages_Roles
                    )
                )
