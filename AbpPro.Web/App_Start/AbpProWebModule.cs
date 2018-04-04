@@ -13,6 +13,7 @@ using AbpPro.Api;
 using Castle.MicroKernel.Registration;
 using Hangfire;
 using Microsoft.Owin.Security;
+using Abp.Configuration.Startup;
 
 namespace AbpPro.Web
 {
@@ -32,6 +33,9 @@ namespace AbpPro.Web
 
             //Configure navigation/menu
             Configuration.Navigation.Providers.Add<AbpProNavigationProvider>();
+
+            //允许未经验证的js资源请求
+            Configuration.Modules.AbpWeb().AntiForgery.IsEnabled = false;
 
             //Configure Hangfire - ENABLE TO USE HANGFIRE INSTEAD OF DEFAULT JOB MANAGER
             //Configuration.BackgroundJobs.UseHangfire(configuration =>

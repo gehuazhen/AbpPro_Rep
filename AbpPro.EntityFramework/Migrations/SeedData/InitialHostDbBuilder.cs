@@ -21,6 +21,7 @@ namespace AbpPro.Migrations.SeedData
             new HostRoleAndUserCreator(_context).Create();
             new DefaultSettingsCreator(_context).Create();
             new DefaultTasksCreator(_context).Create();
+            new DefaultProductCreator(_context).Create();
         }
     }
 }

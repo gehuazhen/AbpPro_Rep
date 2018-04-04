@@ -11,6 +11,9 @@ using System.Web.Mvc;
 using Abp.Application.Services.Dto;
 using Abp.Web.Mvc.Authorization;
 using AbpPro.Authorization;
+using Newtonsoft.Json;
+using System.IO;
+using AbpPro.Products;
 
 namespace AbpPro.Web.Controllers
 {
@@ -18,7 +21,6 @@ namespace AbpPro.Web.Controllers
     [AbpMvcAuthorize(PermissionNames.Pages_Users)]
     public class BackendTasksController:AbpProControllerBase
     {
-
         private readonly ITaskAppService _taskAppService;
         private readonly IUserAppService _userAppService;
 
@@ -36,7 +38,14 @@ namespace AbpPro.Web.Controllers
             ViewBag.AssignedPersonId = new SelectList(userList.Items, "Id", "Name");
             return View();
         }
-
+        // GET: Task
+        public async System.Threading.Tasks.Task<ActionResult> TaskList()
+        {
+            ViewBag.TaskStateDropdownList = GetTaskStateDropdownList(null);
+            var userList = (await _userAppService.GetAll(new PagedResultRequestDto { MaxResultCount = 100 })); // GetUsers();
+            ViewBag.AssignedPersonId = new SelectList(userList.Items, "Id", "Name");
+            return View();
+        }
 
         [DontWrapResult]
         public JsonResult GetAllTasks(int limit, int offset, string sortfiled, string sortway, string search, string status)

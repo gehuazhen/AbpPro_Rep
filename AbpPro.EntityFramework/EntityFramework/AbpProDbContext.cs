@@ -6,6 +6,7 @@ using AbpPro.Authorization.Users;
 using AbpPro.MultiTenancy;
 
 using AbpPro.Tasks;
+using AbpPro.Products;
 
 namespace AbpPro.EntityFramework
 {
@@ -13,6 +14,7 @@ namespace AbpPro.EntityFramework
     {
         //TODO: Define an IDbSet for your Entities...
         public  IDbSet<Task> Tasks { get; set; }
+        public IDbSet<Product> Products { get; set; }
         /* NOTE: 
          *   Setting "Default" to base class helps us when working migration commands on Package Manager Console.
          *   But it may cause problems when working Migrate.exe of EF. If you will apply migrations on command line, do not

@@ -29,11 +29,12 @@ namespace AbpPro.Web
                 SlidingExpiration = bool.Parse(ConfigurationManager.AppSettings["AuthSession.SlidingExpirationEnabled"] ?? bool.FalseString)
  
             });
-           
+
+
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
             app.MapSignalR();
-
+            app.UseStaticFiles("/App");
             //ENABLE TO USE HANGFIRE dashboard (Requires enabling Hangfire in AbpProWebModule)
             //app.UseHangfireDashboard("/hangfire", new DashboardOptions
             //{
