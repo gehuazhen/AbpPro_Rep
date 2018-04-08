@@ -134,7 +134,28 @@ namespace AbpPro.Products
         {
             var products=_productRepository.GetAll();
 
-            return Mapper.Map<IList<ProductDto>>(products);
+
+            return Mapper.Map<IList<ProductDto>>(products) ;
+        }
+
+        public int CreateProduct(CreateProductInput input)
+        {
+
+            //Logger.Info("Insert into a product for input:" + input);
+            input.Uuid = Guid.NewGuid();
+            var product = Mapper.Map<Product>(input);
+            return _productRepository.InsertAndGetId(product);
+        }
+
+
+        public void DeleteProduct(Guid uuid)
+        {
+            _productRepository.Delete(t => t.Uuid == uuid);
+            //var product = _productRepository.Get(uuid);
+            //if (product != null)
+            //{
+            //    _productRepository.Delete(uuid);
+            //}
         }
 
 

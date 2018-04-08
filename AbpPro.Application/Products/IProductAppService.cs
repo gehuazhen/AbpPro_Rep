@@ -16,11 +16,11 @@ namespace AbpPro.Products
  //       GetTasksOutput GetTasks(GetTasksInput input);
 
  //       void UpdateTask(UpdateTaskInput input);
- //       int  CreateTask(CreateTaskInput input);
+        int  CreateProduct(CreateProductInput input);
  //       PagedResultDto<TaskDto> GetPagedTasks(GetTasksInput input);
  //       TaskDto GetTaskById(int taskId);
 
-//        void DeleteTask(int taskId);
+        void DeleteProduct(Guid uuid);
 
         IList<ProductDto> GetAllProducts();
 

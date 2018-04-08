@@ -41,6 +41,7 @@
            type:'datagrid',
            id:'productDg'
        }">
+
         <a id="add" href="javascript:void(0)">新增</a>
         <a id="edit" href="javascript:void(0)">编辑</a>
         <a id="delete" href="javascript:void(0)">删除</a>
@@ -114,7 +115,7 @@
             id: 'productDg',
             url: '/products/GetAllProducts',
             columns: [[
-                {field: 'Uuid', title: 'UUID', checkbox: true},
+                {field: 'StrUuid', title: 'UUID', checkbox: true},
                 {field: 'Name', title: '商品名称', sortable: true},
                 {field: 'Code', title: '商品编号', sortable: true},
                 {field: 'Spec', title: '规格型号', sortable: true},
@@ -171,11 +172,11 @@
             dialog: {
                 id: 'userAddDialog',
                 height: 350,
-                href: _ctx + '/html/complex/dialog_add.html',
+                href: '/Products/Create',
                 buttonsGroup: [
                     {
                         text: '保存',
-                        url: _ctx + '/json/response/success.json',
+                        url:  '/Products/CreateProduct',
                         iconCls: 'fa fa-plus',
                         handler: 'ajaxForm',
                         btnCls: 'topjui-btn-normal'
@@ -193,11 +194,12 @@
                 width: 950,
                 height: 500,
                 href: _ctx + '/html/complex/dialog_edit.html?uuid={uuid}',
-                url: _ctx + '/json/product/detail.json?uuid={uuid}',
+                //暂时不清楚使用方式所以隐藏
+                //url: _ctx + '/json/product/detail.json?uuid={uuid}',
                 buttonsGroup: [
                     {
                         text: '更新',
-                        url: _ctx + '/json/response/success.json',
+                        url: '/json/response/Delete',
                         iconCls: 'fa fa-save',
                         handler: 'ajaxForm',
                         btnCls: 'topjui-btn'
@@ -215,9 +217,9 @@
                 type: 'datagrid',
                 id: 'productDg',
                 uncheckedMsg: '请先勾选要删除的数据',
-                param: 'uuid:uuid,code:code'
+                param: 'uuid:StrUuid'//,Code:Code
             },
-            url: _ctx + '/json/response/success.json'
+            url:  '/Products/Delete'
         });
 
         $("#filter").iMenubutton({

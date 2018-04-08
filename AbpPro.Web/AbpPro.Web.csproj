@@ -3626,6 +3626,7 @@
     <Content Include="Views\BackendTasks\_CreateTask.cshtml" />
     <Content Include="Views\BackendTasks\_EditTask.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Products\_CreateProduct.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

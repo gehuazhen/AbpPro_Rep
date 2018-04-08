@@ -1,6 +1,5 @@
 ﻿using Abp.Web.Models;
-using AbpPro.Tasks;
-using AbpPro.Tasks.Dto;
+using AbpPro.Products.Dto;
 using AbpPro.Users;
 using AutoMapper;
 using System;
@@ -54,7 +53,58 @@ namespace AbpPro.Web.Controllers
             JsonRequestBehavior.AllowGet);
         }
 
+        //       [ChildActionOnly]
+        public  PartialViewResult Create()
+        {
+            //var userList = (await _productAppService.GetAll(new PagedResultRequestDto { MaxResultCount = int.MaxValue })); //GetUsers();
+            //ViewBag.AssignedPersonId = new SelectList(userList.Items, "Id", "Name");
+            return PartialView("_CreateProduct");
+        }
+        [HttpPost]
+        [DontWrapResult]
+        // [ValidateAntiForgeryToken]
+        public JsonResult CreateProduct(CreateProductInput product)
+        {
+            var id = _productAppService.CreateProduct(product); //(task);
 
+
+
+            var res = new
+            {
+                statusCode = 200,
+                title = "200",
+                message = "恭喜你，操作成功！当statusCode为200时，返回成功提示信息。"
+
+            };
+            return Json( res);
+
+            //  var input = new GetTasksInput();
+            //  var output = _taskAppService.GetTasks(input);
+
+            //  return PartialView("_List", output.Tasks);
+        }
+
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        [DontWrapResult]
+        public JsonResult Delete(DeleteProductInput input )
+        {
+            input.Uuid = input.Uuid.Replace("'", "");
+
+            Guid uuid = Guid.Parse(input.Uuid);
+                _productAppService.DeleteProduct( uuid);
+
+               // return Json(true, JsonRequestBehavior.AllowGet);
+            
+            var res = new
+            {
+                statusCode = 200,
+                title = "200",
+                message = "恭喜你，操作成功！当statusCode为200时，返回成功提示信息。"
+
+            };
+            return Json(res);
+        }
 
         /*
         [DontWrapResult]

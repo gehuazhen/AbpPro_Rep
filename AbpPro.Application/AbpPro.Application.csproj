@@ -223,9 +223,12 @@
     <Compile Include="MultiTenancy\Dto\TenantDto.cs" />
     <Compile Include="MultiTenancy\ITenantAppService.cs" />
     <Compile Include="MultiTenancy\TenantAppService.cs" />
+    <Compile Include="Products\Dto\CreateProductInput.cs" />
+    <Compile Include="Products\Dto\DeleteProductInput.cs" />
     <Compile Include="Products\Dto\ProductDto.cs" />
     <Compile Include="Products\IProductAppService.cs" />
     <Compile Include="Products\ProductAppService.cs" />
+    <Compile Include="Products\ProductDtoMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Roles\Dto\CreateRoleDto.cs" />
     <Compile Include="Roles\Dto\PermissionDto.cs" />

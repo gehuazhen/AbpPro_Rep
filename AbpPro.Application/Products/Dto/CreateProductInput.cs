@@ -1,4 +1,4 @@
-﻿using Abp.Application.Services.Dto;
+﻿using Abp.AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace AbpPro.Products.Dto
 {
-    public class ProductDto : EntityDto
+    [AutoMapTo(typeof(Product))] //定义单向映射
+    public class CreateProductInput
     {
         //"uuid": "04C2141B-B74A-11E4-98B5-782BCBD7746B",
-        public string StrUuid { get; set; }
+        public Guid Uuid { get; set; }
         //"category_id": "6C2AFC9A-B3F3-11E4-9DEA-782BCBD7746B",
         public Guid CategoryId { get; set; }
         //"code": "2103",
@@ -27,19 +28,19 @@ namespace AbpPro.Products.Dto
 
         public string Spec { get; set; }
         //"unit_id": "5D6D901E-B3F3-11E4-9DEA-782BCBD7746B",
-     
+
         public Guid? UnitId { get; set; }
         //"purchase_price": "0.00",
 
         public float? PurchasePrice { get; set; }
         //"py": "XPKQJHQ",
-     
+
         public string Py { get; set; }
         //"spec_py": null,
-   
+
         public string SpecPy { get; set; }
         //"bar_code": null,
- 
+
         public string BarCode { get; set; }
         //"data_org": "01010001",
 
@@ -51,18 +52,17 @@ namespace AbpPro.Products.Dto
 
         public Guid? CompanyId { get; set; }
         //"brand_id": null,
-     
+
         public string BrandId { get; set; }
         //"unit": null,
-      
+
         public string Unit { get; set; }
         //"rate": 25
 
         public float? Rate { get; set; }
         public DateTime CreationTime { get; set; }
-
-
-
-
     }
+
+
+
 }

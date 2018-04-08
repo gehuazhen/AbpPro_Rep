@@ -9,6 +9,7 @@ using AbpPro.Authorization.Roles;
 using AbpPro.Authorization.Users;
 using AbpPro.Roles.Dto;
 using AbpPro.Users.Dto;
+using Castle.MicroKernel.Registration;
 
 namespace AbpPro
 {
@@ -39,6 +40,18 @@ namespace AbpPro
                 cfg.CreateMap<CreateUserDto, User>();
                 cfg.CreateMap<CreateUserDto, User>().ForMember(x => x.Roles, opt => opt.Ignore());
             });
+
+            //注册IDtoMapping
+            IocManager.IocContainer.Register(
+                Classes.FromAssembly(Assembly.GetExecutingAssembly())
+                    .IncludeNonPublicTypes()
+                    .BasedOn<IDtoMapping>()
+                    .WithService.Self()
+                    .WithService.DefaultInterfaces()
+                    .LifestyleTransient()
+            );
+
+
 
             //解析依赖，并进行映射规则创建
             Configuration.Modules.AbpAutoMapper().Configurators.Add(mapper =>
