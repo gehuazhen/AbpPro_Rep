@@ -246,6 +246,7 @@
   <ItemGroup>
     <Compile Include="AbpProTestModule.cs" />
     <Compile Include="MultiTenantFactAttribute.cs" />
+    <Compile Include="Products\ProductAppService_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sessions\SessionAppService_Tests.cs" />
     <Compile Include="AbpProTestBase.cs" />

@@ -10,6 +10,7 @@ namespace AbpPro.Tests.Users
 {
     public class UserAppService_Tests : AbpProTestBase
     {
+        /*
         private readonly IUserAppService _userAppService;
 
         public UserAppService_Tests()
@@ -48,6 +49,6 @@ namespace AbpPro.Tests.Users
                 var johnNashUser = await context.Users.FirstOrDefaultAsync(u => u.UserName == "john.nash");
                 johnNashUser.ShouldNotBeNull();
             });
-        }
+        }*/
     }
 }

@@ -208,6 +208,17 @@
     <Compile Include="Authorization\Accounts\Dto\RegisterOutput.cs" />
     <Compile Include="Authorization\Accounts\Dto\TenantAvailabilityState.cs" />
     <Compile Include="Authorization\Accounts\IAccountAppService.cs" />
+    <Compile Include="CaseGroup\Dto\CreateZdysInput.cs" />
+    <Compile Include="CaseGroup\Dto\GetZdysOutput.cs" />
+    <Compile Include="CaseGroup\Dto\UpdateZdysInput.cs" />
+    <Compile Include="CaseGroup\Dto\ZdysDto.cs" />
+    <Compile Include="CaseGroup\Dto\CreateAjmbInput.cs" />
+    <Compile Include="CaseGroup\Dto\GetZdysInput.cs" />
+    <Compile Include="CaseGroup\Dto\GetAjmbOutput.cs" />
+    <Compile Include="CaseGroup\Dto\AjmbDto.cs" />
+    <Compile Include="CaseGroup\Dto\UpdateAjmbInput.cs" />
+    <Compile Include="CaseGroup\ICaseGroupAppService.cs" />
+    <Compile Include="CaseGroup\CaseGroupAppService.cs" />
     <Compile Include="Configuration\ConfigurationAppService.cs" />
     <Compile Include="Configuration\Dto\ChangeUiThemeInput.cs" />
     <Compile Include="Configuration\IConfigurationAppService.cs" />

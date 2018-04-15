@@ -24,5 +24,7 @@ namespace AbpPro.Products
 
         IList<ProductDto> GetAllProducts();
 
+        void GetProductTableFields();
+
     }
 }

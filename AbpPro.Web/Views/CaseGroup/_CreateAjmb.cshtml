@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+
+
+
+
+
+
+    <!--<input type="hidden" id="uuid" name="Uuid">-->
+    <table class="editTable">
+        <tr>
+            <td class="label">模板名称</td>
+            <td colspan="3">
+                <input type="text" name="mb_mbmc" data-toggle="topjui-textbox" data-options="required:true,width:450">
+            </td>
+        </tr>
+
+        <tr>
+            <td class="label">备用</td>
+            <td>
+                <input type="text" name="mb_c"
+                       data-toggle="topjui-combobox"
+                       data-options="data:[
+                       {
+                           text: '测试',
+                           value: '测试'
+                       },
+                       {
+                           text: '5103',
+                           value: '5103'
+                       },
+                       {
+                           text: '1204',
+                           value: '1204'
+                       },
+                       {
+                           text: '1404',
+                           value: '1404'
+                       }
+                   ]">
+            </td>
+            <td class="label">创建人</td>
+            <td>
+                <input type="text" name="mb_cjr"
+                       data-toggle="topjui-textbox"
+                       data-options="required:false,panelWidth:200,valueField:'code'">
+            </td>
+        </tr>
+   
+        <tr>
+            <td class="label">上传模板文件</td>
+            <td colspan="3">
+                <input type="text" name="thumbnail" data-toggle="topjui-upload-lay"
+                       data-options="editable:false,
+                       buttonText:'上传Excel',
+                       accept:'xlsx',
+                       uploadUrl:'/CaseGroup/StationImport'">
+            </td>
+        </tr>
+        <tr>
+            <td class="label">备注信息</td>
+            <td colspan="3">
+                <input type="text" name="description" data-toggle="topjui-textarea">
+            </td>
+        </tr>
+    </table>
+
+<!--
+    -->

@@ -234,6 +234,10 @@
     <Compile Include="Migrations\201804011729405_addProducts1.Designer.cs">
       <DependentUpon>201804011729405_addProducts1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804150754511_add_casegroup.cs" />
+    <Compile Include="Migrations\201804150754511_add_casegroup.Designer.cs">
+      <DependentUpon>201804150754511_add_casegroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="AbpProDataModule.cs" />
@@ -247,6 +251,7 @@
     <Compile Include="Migrations\SeedData\InitialHostDbBuilder.cs" />
     <Compile Include="Migrations\SeedData\TenantRoleAndUserBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlExecuter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -279,6 +284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804011729405_addProducts1.resx">
       <DependentUpon>201804011729405_addProducts1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804150754511_add_casegroup.resx">
+      <DependentUpon>201804150754511_add_casegroup.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

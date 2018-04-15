@@ -18,8 +18,7 @@ using Abp.AutoMapper;
 
 using Abp.Linq.Extensions;
 using AbpPro.Products.Dto;
-
-
+using System.Data.Entity.Infrastructure;
 
 namespace AbpPro.Products
 {
@@ -27,9 +26,25 @@ namespace AbpPro.Products
     {
         private readonly IRepository<Product> _productRepository;
 
-        public ProductAppService(IRepository<Product> productRepository)
+
+        private readonly ISqlExecuter _sqlExecuter;
+
+
+        public ProductAppService(IRepository<Product> productRepository,ISqlExecuter sqlExecuter)
         {
             _productRepository = productRepository;
+            _sqlExecuter = sqlExecuter;
+        }
+
+        public void GetProductTableFields()
+        {
+
+            const string sql = "SELECT B.name AS Code,C.value AS Name FROM sys.tables A " +
+                "INNER JOIN sys.columns B ON B.object_id = A.object_id " +
+                "LEFT JOIN sys.extended_properties C ON C.major_id = B.object_id AND C.minor_id = B.column_id " +
+                "WHERE A.name = 'Products' and C.value is not null ";
+            var charts = _sqlExecuter.SqlQuery<ProductField>(sql).ToList();
+            var b= charts;
         }
 
         /*

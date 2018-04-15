@@ -55,6 +55,14 @@ namespace AbpPro.Web
                        icon: "fa-users",
                        requiredPermissionName: PermissionNames.Pages_Roles
                    )
+               ).AddItem(
+                   new MenuItemDefinition(
+                       "CaseGroup",
+                       L("CaseGroup"),
+                       url: "CaseGroup",
+                       icon: "fa fa-table",
+                       requiredPermissionName: PermissionNames.Pages_Roles
+                   )
                )
                .AddItem(
                    new MenuItemDefinition(

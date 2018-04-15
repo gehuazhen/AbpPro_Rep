@@ -7,6 +7,7 @@ namespace AbpPro.Tests.Sessions
 {
     public class SessionAppService_Tests : AbpProTestBase
     {
+        /*
         private readonly ISessionAppService _sessionAppService;
 
         public SessionAppService_Tests()
@@ -47,6 +48,6 @@ namespace AbpPro.Tests.Sessions
 
             output.Tenant.ShouldNotBe(null);
             output.Tenant.Name.ShouldBe(currentTenant.Name);
-        }
+        }*/
     }
 }

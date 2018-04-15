@@ -1,5 +1,5 @@
 ﻿using Abp.Web.Models;
-using AbpPro.Products.Dto;
+using AbpPro.CaseGroup.Dto;
 using AbpPro.Users;
 using AutoMapper;
 using System;
@@ -12,16 +12,16 @@ using Abp.Web.Mvc.Authorization;
 using AbpPro.Authorization;
 using Newtonsoft.Json;
 using System.IO;
-using AbpPro.Products;
+using AbpPro.CaseGroup;
 
 
 namespace AbpPro.Web.Controllers
 {
 
     [AbpMvcAuthorize(PermissionNames.Pages_Users)]
-    public class ProductsController:AbpProControllerBase
+    public class CaseGroupController : AbpProControllerBase
     {
-        private readonly IProductAppService _productAppService;
+        private readonly ICaseGroupAppService _caseGroupAppService;
         //private readonly IUserAppService _userAppService;
 
 
@@ -30,9 +30,9 @@ namespace AbpPro.Web.Controllers
             return View();
         }
 
-        public ProductsController(IProductAppService productAppService, IUserAppService userAppService)
+        public CaseGroupController(ICaseGroupAppService caseGroupAppService, IUserAppService userAppService)
         {
-            _productAppService = productAppService;
+            _caseGroupAppService = caseGroupAppService;
             
         //_userAppService = userAppService;
     }
@@ -40,64 +40,69 @@ namespace AbpPro.Web.Controllers
 
 
         [DontWrapResult]
-        public JsonResult GetAllProducts()
+        public JsonResult GetAllAjmb()
         {
-            _productAppService.GetProductTableFields();
-
-
-            var products = _productAppService.GetAllProducts();
+ 
+            var ajbm = _caseGroupAppService.GetAjmb();
 
             return Json(
                 //new{
                 // total = pagedTasks.TotalCount,
                 // res = products}
-                products,
+                ajbm.Ajmb,
             JsonRequestBehavior.AllowGet);
         }
 
         //       [ChildActionOnly]
-        public  PartialViewResult Create()
+        public  PartialViewResult GetAjmbView()
         {
-            //var userList = (await _productAppService.GetAll(new PagedResultRequestDto { MaxResultCount = int.MaxValue })); //GetUsers();
-            //ViewBag.AssignedPersonId = new SelectList(userList.Items, "Id", "Name");
-            return PartialView("_CreateProduct");
+            return PartialView("_CreateAjmb");
         }
+
+        [HttpPost]
+        [DontWrapResult]
+        public JsonResult StationImport()
+        {
+            HttpPostedFileBase file = Request.Files["file"];
+            string FileName;
+            string savePath;
+
+
+            var res = new
+            {
+                statusCode = 200,
+                title = "操作提示",
+                message = "文件上传成功！当statusCode为200时，返回成功提示信息。",
+                filePath = "/uploads/file/2017103011215432467.xls"
+            };
+            return Json(res);
+        }
+
+
+
         [HttpPost]
         [DontWrapResult]
         // [ValidateAntiForgeryToken]
-        public JsonResult CreateProduct(CreateProductInput product)
+        public JsonResult CreateAjmb(CreateAjmbInput ajmb)
         {
-            var id = _productAppService.CreateProduct(product); //(task);
-
-
+            var id = _caseGroupAppService.CreateAjmb(ajmb); //(task);
 
             var res = new
             {
                 statusCode = 200,
                 title = "200",
                 message = "恭喜你，操作成功！当statusCode为200时，返回成功提示信息。"
-
             };
             return Json( res);
-
-            //  var input = new GetTasksInput();
-            //  var output = _taskAppService.GetTasks(input);
-
-            //  return PartialView("_List", output.Tasks);
         }
 
         [HttpPost]
         //[ValidateAntiForgeryToken]
         [DontWrapResult]
-        public JsonResult Delete(DeleteProductInput input )
+        public JsonResult DeleteAjmb(int id )
         {
-            input.Uuid = input.Uuid.Replace("'", "");
 
-            Guid uuid = Guid.Parse(input.Uuid);
-                _productAppService.DeleteProduct( uuid);
-
-               // return Json(true, JsonRequestBehavior.AllowGet);
-            
+            _caseGroupAppService.DeleteAjmb(id);
             var res = new
             {
                 statusCode = 200,

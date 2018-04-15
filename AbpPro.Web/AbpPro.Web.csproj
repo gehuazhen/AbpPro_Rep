@@ -3468,6 +3468,7 @@
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CaseGroupController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\BackendTasksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -3627,6 +3628,8 @@
     <Content Include="Views\BackendTasks\_EditTask.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\Products\_CreateProduct.cshtml" />
+    <Content Include="Views\CaseGroup\_CreateAjmb.cshtml" />
+    <Content Include="Views\CaseGroup\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
