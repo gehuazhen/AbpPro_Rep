@@ -26,7 +26,7 @@ namespace AbpPro.Migrations.SeedData
 
          static DefaultProductCreator()
         {
-            string json= File.ReadAllText("D:\\架构\\src\\AbpPro_Rep\\AbpPro.Web\\App\\json\\product\\list.json");
+            string json= File.ReadAllText("E:\\project\\git\\AbpPro_Rep\\AbpPro.Web\\App\\json\\product\\list.json");
             InitalProducts = DeserializeJsonToList<Product>(json);
         }
 

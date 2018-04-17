@@ -8,6 +8,7 @@ using AbpPro.MultiTenancy;
 using AbpPro.Tasks;
 using AbpPro.Products;
 using AbpPro.CaseGroup;
+using AbpPro.Dict;
 
 namespace AbpPro.EntityFramework
 {
@@ -18,6 +19,8 @@ namespace AbpPro.EntityFramework
         public IDbSet<Product> Products { get; set; }
         public IDbSet<M_AJMB> Ajmb { get; set; }
         public IDbSet<M_ZDYSB> zdysb { get; set; }
+        public IDbSet<M_DICT> Dict { get; set; }
+        public IDbSet<M_DICTVALUE> DictValue{ get; set; }
         /* NOTE: 
          *   Setting "Default" to base class helps us when working migration commands on Package Manager Console.
          *   But it may cause problems when working Migrate.exe of EF. If you will apply migrations on command line, do not

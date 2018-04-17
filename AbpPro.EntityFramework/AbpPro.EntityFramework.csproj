@@ -238,6 +238,14 @@
     <Compile Include="Migrations\201804150754511_add_casegroup.Designer.cs">
       <DependentUpon>201804150754511_add_casegroup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804171229443_201804172028_add_mdict.cs" />
+    <Compile Include="Migrations\201804171229443_201804172028_add_mdict.Designer.cs">
+      <DependentUpon>201804171229443_201804172028_add_mdict.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804171353132_201804172152_add_mdict_value.cs" />
+    <Compile Include="Migrations\201804171353132_201804172152_add_mdict_value.Designer.cs">
+      <DependentUpon>201804171353132_201804172152_add_mdict_value.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="AbpProDataModule.cs" />
@@ -287,6 +295,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804150754511_add_casegroup.resx">
       <DependentUpon>201804150754511_add_casegroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804171229443_201804172028_add_mdict.resx">
+      <DependentUpon>201804171229443_201804172028_add_mdict.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804171353132_201804172152_add_mdict_value.resx">
+      <DependentUpon>201804171353132_201804172152_add_mdict_value.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

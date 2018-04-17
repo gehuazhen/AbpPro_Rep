@@ -200,6 +200,8 @@
     <Compile Include="CaseGroup\M_AJMB.cs" />
     <Compile Include="Configuration\AppSettingNames.cs" />
     <Compile Include="Configuration\AppSettingProvider.cs" />
+    <Compile Include="Dict\M_DICT.cs" />
+    <Compile Include="Dict\M_DICTVALUE.cs" />
     <Compile Include="Editions\EditionManager.cs" />
     <Compile Include="Features\FeatureValueStore.cs" />
     <Compile Include="ISqlExecuter.cs" />

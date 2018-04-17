@@ -224,6 +224,16 @@
     <Compile Include="Configuration\IConfigurationAppService.cs" />
     <Compile Include="Configuration\Ui\UiThemeInfo.cs" />
     <Compile Include="Configuration\Ui\UiThemes.cs" />
+    <Compile Include="Dict\DcitAppService.cs" />
+    <Compile Include="Dict\Dto\CreateMDictInput.cs" />
+    <Compile Include="Dict\Dto\CreateMDictValueInput.cs" />
+    <Compile Include="Dict\Dto\GetMDictOutput.cs" />
+    <Compile Include="Dict\Dto\GetMDictValueOutput.cs" />
+    <Compile Include="Dict\Dto\MDictDto.cs" />
+    <Compile Include="Dict\Dto\MDictVlueDto.cs" />
+    <Compile Include="Dict\Dto\UpdateMDictInput.cs" />
+    <Compile Include="Dict\Dto\UpdateMDictValueInput.cs" />
+    <Compile Include="Dict\IDcitAppService.cs" />
     <Compile Include="Dto\PagedAndFilteredInputDto.cs" />
     <Compile Include="Dto\PagedAndSortedInputDto.cs" />
     <Compile Include="Dto\PagedInputDto.cs" />
